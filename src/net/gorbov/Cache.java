@@ -3,7 +3,7 @@ package net.gorbov;
 import java.util.concurrent.*;
 
 /**
- * Class for caching text massage
+ * Class for caching text massage. Contains class for saving  Life time object in cache
  */
 public class Cache {
 
@@ -51,10 +51,29 @@ public class Cache {
         return null;
     }
 
+
     public void setMessage(Message message){
 
         CachedMessage cachedMessage = new CachedMessage(message);
         storage.put(message.getId(), cachedMessage);
+    }
+
+    private class CachedMessage{
+        private final long timeLife;
+        private final Message message;
+
+        public CachedMessage(Message message){
+            this.message = message;
+            timeLife = System.currentTimeMillis() + Cache.TIME_OUT;
+        }
+
+        public Message getMessage(){
+            return message;
+        }
+
+        public boolean isLive(long currentTimeMillis) {
+            return currentTimeMillis < timeLife;
+        }
     }
 
 }
