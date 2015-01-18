@@ -1,10 +1,9 @@
-package net.gorbov.dao;
+package net.gorbov;
 
-import java.util.Map;
 import java.util.concurrent.*;
 
 /**
- * Created by Mihail on 13.01.2015.
+ * Class for caching text massage
  */
 public class Cache {
 

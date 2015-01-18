@@ -1,7 +1,7 @@
-package net.gorbov.dao;
+package net.gorbov;
 
 /**
- * Created by Mihail on 13.01.2015.
+ * Class contains message and additionally message lifetime
  */
 public class CachedMessage  {
 

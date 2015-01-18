@@ -1,9 +1,9 @@
-package net.gorbov.dao;
+package net.gorbov;
 
 import java.util.Date;
 
 /**
- * Created by Mihail on 13.01.2015.
+ * DAO object for saving message
  */
 public class Message {
 
